@@ -1,0 +1,19 @@
+{
+  "executors": {
+    "start": {
+      "implementation": "./src/executors/start/executor",
+      "schema": "./src/executors/start/schema.json",
+      "description": "start executor"
+    },
+    "make": {
+      "implementation": "./src/executors/make/executor",
+      "schema": "./src/executors/make/schema.json",
+      "description": "make executor"
+    },
+    "package": {
+      "implementation": "./src/executors/package/executor",
+      "schema": "./src/executors/package/schema.json",
+      "description": "package executor"
+    }
+  }
+}

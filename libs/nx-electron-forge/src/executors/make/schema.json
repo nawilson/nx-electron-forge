@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": 2,
+  "cli": "nx",
+  "title": "Make executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "arch": { "type": "string", "description": "The target architecture" },
+    "dir": { "type": "string", "description": "The path to the app from which distrubutables are generated" },
+    "interactive": { "type": "boolean", "description": "Whether to use sensible defaults or prompt the user visually" },
+    "outDir": { "type": "string", "description": "The path to the directory containing generated distributables" },
+    "overrideTargets": { "type": "any", "description": "An array of make targets to override your forge config" },
+    "platform": { "type": "string", "description": "The target platform" },
+    "skipPackage": { "type": "boolean", "description": "Whether to skip the pre-make packaging step" }
+  },
+  "required": []
+}
