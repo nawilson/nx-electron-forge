@@ -1,5 +1,10 @@
 {
   "executors": {
+    "webpack": {
+      "implementation": "./src/executors/webpack/executor",
+      "schema": "./src/executors/webpack/schema.json",
+      "description": "webpack executor"
+    },
     "start": {
       "implementation": "./src/executors/start/executor",
       "schema": "./src/executors/start/schema.json",

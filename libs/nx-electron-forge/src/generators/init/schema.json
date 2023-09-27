@@ -6,12 +6,58 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "",
+      "description": "Application name.",
+      "visible": true,
       "$default": {
         "$source": "argv",
         "index": 0
       },
       "x-prompt": "What name would you like to use?"
+    },
+    "bundler": {
+      "type": "string",
+      "description": "The bundler to use. Choosing 'none' means this library is not buildable.",
+      "visible": true,
+      "default": "webpack",
+      "x-prompt": {
+        "message": "Which bundler to use?",
+        "type": "list",
+        "items": [
+          { "label": "vite", "value": "vite" },
+          { "label": "webpack", "value": "webpack" }
+        ]
+      }
+    },
+    "compiler": {
+      "type": "string",
+      "description": "The compiler to use.",
+      "visible": true,
+      "default": "tsc",
+      "x-prompt": {
+        "message": "Which compiler to use?",
+        "type": "list",
+        "items": [
+          { "label": "swc", "value": "swc" },
+          { "label": "tsc", "value": "tsc" }
+        ]
+      }
+    },
+    "directory": {
+      "type": "string",
+      "description": "A directory where the app is placed.",
+      "visible": true
+    },
+    "skipFormat": {
+      "type": "boolean",
+      "description": "Skip file formatting",
+      "visible": true,
+      "default": false
+    },
+    "js": {
+      "type": "boolean",
+      "description": "Generate JavaScript files rather than TypeScript files.",
+      "visible": true,
+      "default": false
     }
   },
   "required": ["name"]

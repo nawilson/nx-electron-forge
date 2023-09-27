@@ -1,0 +1,6 @@
+const { composePlugins, withNx } = require('@nx/webpack');
+const { withElectron } = require('@nawilson/nx-electron-forge');
+
+// Nx plugins for webpack.
+// Electron Forge plugin for webpack
+module.exports = composePlugins(withNx(), withElectron(), (config) => config );

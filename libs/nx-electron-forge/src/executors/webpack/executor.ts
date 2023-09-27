@@ -1,9 +1,8 @@
 import { ExecutorContext } from '@nx/devkit';
 import { api } from '@electron-forge/core';
-import { platform } from 'os';
-import { MakeExecutorSchema } from './schema';
+import { WebpackExecutorSchema } from './schema';
 
-export default async function runExecutor(options: Partial<MakeExecutorSchema>, context?: ExecutorContext) {
+export default async function runExecutor(options: Partial<WebpackExecutorSchema>, context?: ExecutorContext) {
   try {
     options = { ...DEFAULT_OPTIONS, ...options };
     const results = await api.make(options);
@@ -19,12 +18,12 @@ export default async function runExecutor(options: Partial<MakeExecutorSchema>, 
   }
 }
 
-const DEFAULT_OPTIONS: MakeExecutorSchema = {
+const DEFAULT_OPTIONS: WebpackExecutorSchema = {
   arch: '',
   dir: '',
   interactive: false,
   outDir: '',
   overrideTargets: [],
-  platform: platform(),
+  platform: '',
   skipPackage: false,
 };
